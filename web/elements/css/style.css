@@ -179,13 +179,22 @@
     border-style: dashed;
 }
 #form{
-    margin-left: auto;
-    margin-right: auto;
-    border-style: dashed;
-    width: 75%;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-style: groove;
+    width: 25%;
+    background-color: #F7B23A;
 }
 #form2{
-    margin-right: auto;
-    margin-right: auto;
-    width: 70%;
+     margin-left: 40%;
+    margin-right: 40%;
+    border-style: dashed;
+    width: 25%;
+}
+#form3{
+    margin-left: 40%;
+    margin-right: 40%;
+    border-style: dashed;
+    width: 25%;
+    background-color: aquamarine;
 }

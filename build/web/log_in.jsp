@@ -1,7 +1,10 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Productos</title>    
+        <title>Iniciar Sesión</title>    
         <link rel="icon" type="image/png" href="elements/img/ballon.png" />
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
         <link href="elements/css/style.css" rel="stylesheet" type="text/css">
@@ -19,15 +22,32 @@
             <nav class="menu" >
                 <a href="index.html">Principal</a>
                 <a href="meetus.html">Nosotros</a>
-                <a href="Clientes.html">Clientes</a>
+                <a href="Productos.html">Productos</a>
                 <a href="Contacto.html">Contacto</a>
-                <a href="log_in.jsp"><img src="elements/img/User.png" width="30" title="Iniciar Sesión"></a>
+                
             </nav>
         </header>
             <br>
             <section id="form">
                 <br>
-                <article><center>Aquí va un bonito formulario</center></article>
+                <article><center>
+                        <div>
+                            <img src="elements/img/User.png" width="210" title="Iniciar Sesión" >
+                            <br>
+                            <br>
+                            <input type="text" placeholder="ingresa tu usuario">
+                            <br>
+                            <br>
+                            <input type="password" placeholder="ingresa tu contraseña">
+                            <br>
+                            <br>
+                            <input type="button" value="a comprar pancito UwU">
+                            <br>
+                            <br>
+                            ¿Aún no tienes cuenta? registrate <a href="registro.html">aquí</a>
+                        </div>
+                    </center>
+                </article>
                 <br>
             </section>
             <br>
