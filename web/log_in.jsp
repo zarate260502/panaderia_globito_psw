@@ -1,4 +1,5 @@
 
+<%@page import="Controlador.MUsuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,7 +25,7 @@
                 <a href="meetus.html">Nosotros</a>
                 <a href="Productos.html">Productos</a>
                 <a href="Contacto.html">Contacto</a>
-                
+                <a href="registro.jsp">Registrarse</a>
             </nav>
         </header>
             <br>
@@ -35,16 +36,19 @@
                             <img src="elements/img/User.png" width="210" title="Iniciar Sesión" >
                             <br>
                             <br>
-                            <input type="text" placeholder="ingresa tu usuario">
+                            <form name="formulario" method="post" action="very_user">
+                                <input type="text" placeholder="ingresa tu usuario" name="txtuser">
                             <br>
                             <br>
-                            <input type="password" placeholder="ingresa tu contraseña">
+                            <input type="password" placeholder="ingresa tu contraseña" name="txtpass">
                             <br>
                             <br>
-                            <input type="button" value="a comprar pancito UwU">
+                            <input type="submit" value="a comprar pancito UwU" name="act"> 
                             <br>
                             <br>
-                            ¿Aún no tienes cuenta? registrate <a href="registro.html">aquí</a>
+                            ¿Aún no tienes cuenta? registrate <a href="registro.jsp">aquí</a>
+                            </form>
+                            
                         </div>
                     </center>
                 </article>

@@ -1,7 +1,11 @@
+
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Clientes</title>    
+        <title>Registro</title>    
         <link rel="icon" type="image/png" href="elements/img/ballon.png" />
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
         <link href="elements/css/style.css" rel="stylesheet" type="text/css">
@@ -27,12 +31,33 @@
             <br>
             <section id="form2">
                 <br>
-                <article><center>Aquí va un bonito formulario</center></article>
+                <article><center>
+                        <h2>Formulario de Registro</h2>
+                        <br>
+                        <form method="post" name="formulario" action="registrarse">
+                            <label>Nombre: <br></label> <input type="text" name="nombre">
+                            <br>
+                            <br>
+                            <label>Apellido paterno:<br> </label><input type="text" name="appt">
+                            <br>
+                            <br>
+                            <label>Nombre de usuario:<br> </label><input type="text" name="usu">
+                            <br>
+                            <br>
+                            <label>Contraseña<br></label><input type="password" name="pass">
+                            <br>
+                            <br>
+                            <input type="submit" value="Registrame">
+                            <br>
+                            <br>
+                            
+                            ¿Ya tienes cuenta? inicia sesión da click <a href="log_in.jsp">aquí</a>
+                            </form></center></article>
                 <br>
             </section>
             <br>
              <footer class="footer" >
-            <p>Desarrollado un batiziano más</p>
+            <p>Desarrollado por un batiziano más</p>
         </footer>
         </div>
     </body>

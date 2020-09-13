@@ -5,47 +5,57 @@ import java.util.LinkedList;
 import java.util.Vector;
 import java.util.logging.Logger;
 
-public class MUsuario {
+public class MUsuario extends ConDB{
     
     private int id_usu, priv_usu;
     private String nom_usu, appat_usu, user_usu, pass_usu;
-    
+    ConDB con;
     
     
     public MUsuario(){
     
     }
-
+ 
     
 
     //metodo para agregar un nuevo usuario
- public MUsuario CreateUsuario(String nom_usu,String appat_usu, String user, String pass, int priv_usu) throws ClassNotFoundException{
-        MUsuario u = null;
-        Connection con = null;
+ public boolean CreateUsuario(String nombre,String apellido, String user, String pass, int priv){
+       
         PreparedStatement ps = null;
-        ResultSet rs = null;
+        
         try {
-            con = ConDB.getConDB();
-            String q ="INSERT INTO MUsuario (nom_usu, appat_usu, user_usu, pass_usu, priv_usu) VALUES ('?,?,?,?,?')";
-            ps = con.prepareStatement(q);
-            ps.setString(1, u.nom_usu);
-            ps.setString(2, u.appat_usu);
-            ps.setString(3, u.user_usu);
-            ps.setString(4, u.pass_usu);
-            ps.setInt(5, u.priv_usu);
-            ps.executeUpdate();
+            String q ="INSERT INTO MUsuario (nom_usu, appat_usu, user_usu, pass_usu) VALUES (?,?,?,?,2)";
+            ps=getConDB().prepareStatement(q);
+            ps.setString(1, nombre);
+            ps.setString(2, apellido);
+            ps.setString(3, user);
+            ps.setString(4, pass);
+           ps.setInt(5,priv);
+            if(ps.executeUpdate()==1){
+                return true;
+            }
             
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            
+        }finally{
+            try {
+                if(getConDB() !=null) getConDB().close();
+                if(ps !=null) ps.close();
+                
+                
+            } catch (Exception e) {
+            }
+           
         }
-        return u;
+       return false; 
     }
  
  
  //metodo para consultar todos los usuarios  
  
    public Vector<MUsuario> Lista_usuarios() throws ClassNotFoundException{
-        Vector<MUsuario> ls = new Vector<MUsuario>();
+        Vector<MUsuario> ls = new Vector<>();
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -179,7 +189,7 @@ public class MUsuario {
     
     
     
-     public MUsuario verificarUsuario(String user, String pass) throws ClassNotFoundException{
+      public MUsuario verificarUsuario(String user, String pass) throws ClassNotFoundException{
         MUsuario u = null;
         Connection con = null;
         PreparedStatement ps = null;
@@ -205,7 +215,7 @@ public class MUsuario {
                 break;
             }
         }catch(SQLException e){
-            System.out.println("No conectó con la tabla");
+            System.out.println("No conecto con la tabla");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
             u = null;
@@ -223,7 +233,6 @@ public class MUsuario {
         } 
         return u;
     }
-    
         //metodos get and set
 
     public int getId_usu() {
@@ -272,6 +281,10 @@ public class MUsuario {
 
     public void setPass_usu(String pass_usu) {
         this.pass_usu = pass_usu;
+    }
+
+    public boolean CreateUsuario(String nom, String appt, String user, String pass) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
         
